@@ -2,7 +2,7 @@
 This file is part of Telegram Desktop Matzu Mod.
 */
 #include "core/matzu_settings.h"
-#include "core/core_settings.h"
+#include "settings.h"
 
 #include <QtCore/QFile>
 #include <QtCore/QJsonDocument>
