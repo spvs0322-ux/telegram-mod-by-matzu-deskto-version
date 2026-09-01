@@ -126,7 +126,7 @@ jobs:
           copy "%OUT%\Telegram.exe" Telegram_Release\
           copy "%OUT%\Updater.exe" Telegram_Release\
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         name: Upload Matzu Telegram Desktop
         with:
           name: Telegram-MatzuPro-Windows-x64
