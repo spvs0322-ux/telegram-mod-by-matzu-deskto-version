@@ -93,12 +93,12 @@ jobs:
           path: |
             ${{ env.LibrariesPath }}\[qQ]t[_-]*
             ${{ env.LibrariesPath }}\cache_keys\[qQ]t[_-]*
-          key: ${{ runner.OS }}-x64-qt-${{ env.CACHE_KEY }}
-          restore-keys: ${{ runner.OS }}-x64-qt-
+          key: ${{ runner.OS }}-x64-qt6-${{ env.CACHE_KEY }}
+          restore-keys: ${{ runner.OS }}-x64-qt6-
 
       - name: Prepare Libraries
         run: |
-          %TBUILD%\%REPO_NAME%\Telegram\build\prepare\win.bat skip-release silent
+          %TBUILD%\%REPO_NAME%\Telegram\build\prepare\win.bat skip-release silent qt6
 
       - name: Free up disk space
         shell: bash
@@ -108,7 +108,7 @@ jobs:
         run: |
           cd %TBUILD%\%REPO_NAME%\Telegram
 
-          call configure.bat x64 ^
+          call configure.bat x64 qt6 ^
           -D TDESKTOP_API_ID=611335 ^
           -D TDESKTOP_API_HASH=d524b414d21f4d37f08684c1df41ac9c ^
           -D CMAKE_CONFIGURATION_TYPES=Debug ^
